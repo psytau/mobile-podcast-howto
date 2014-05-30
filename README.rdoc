@@ -6,4 +6,6 @@
 * add devise to Gemset... a tutorial: 
   http://www.jackiejohnston.us/blog/setting-up-user-authentication-with-devise/
 * rails generate devise:install
+* rails generate devise User
+* (change User model and migration to reflect your choices for divise options)
 <tt>rake doc:app</tt>.

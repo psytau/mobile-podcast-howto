@@ -3,5 +3,7 @@
 * rails new <name> -T
 * rvm --create use 2.0.0@mobile-podcast-howto
 * rvm --ruby-version use 2.0.0@mobile-podcast-howto
-
+* add devise to Gemset... a tutorial: 
+  http://www.jackiejohnston.us/blog/setting-up-user-authentication-with-devise/
+* rails generate devise:install
 <tt>rake doc:app</tt>.

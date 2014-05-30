@@ -1,6 +1,7 @@
 == README
 
 * rails new <name> -T
-
+* rvm --create use 2.0.0@mobile-podcast-howto
+* rvm --ruby-version use 2.0.0@mobile-podcast-howto
 
 <tt>rake doc:app</tt>.

@@ -1,0 +1,6 @@
+== README
+
+* rails new <name> -T
+
+
+<tt>rake doc:app</tt>.

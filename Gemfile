@@ -27,6 +27,8 @@ gem 'spring',        group: :development
 
 group :production do
   gem 'pg'
+  # for mailtrap setup
+  gem 'rest-client'
 end
 
 group :development, :test do

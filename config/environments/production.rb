@@ -6,7 +6,7 @@ Rails.application.configure do
   require 'rest_client'
   require 'json'
 
-  response = RestClient.get "https://mailtrap.io/api/v1/inboxes?api_token=ENV['MAILTRAP_API_TOKEN']"
+  response = RestClient.get "https://mailtrap.io/api/v1/inboxes?api_token=#{ENV['MAILTRAP_API_TOKEN']}"
 
   first_inbox = JSON.parse(response)[0]
 

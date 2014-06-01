@@ -7,5 +7,11 @@
   http://www.jackiejohnston.us/blog/setting-up-user-authentication-with-devise/
 * rails generate devise:install
 * rails generate devise User
-* (change User model and migration to reflect your choices for divise options)
+* (change User model and migration to reflect your choices for devise options)
+* set up mail for devise confirmations
+  * for example with mailtrap: https://devcenter.heroku.com/articles/mailtrap
+  * add host for mailer eg: config.action_mailer.default_url_options = { :host => 'localhost' } in dev and production
+* fix problems by turning debugging on in production.
+  * config.consider_all_requests_local       = true
+  * config.action_controller.perform_caching = false
 <tt>rake doc:app</tt>.

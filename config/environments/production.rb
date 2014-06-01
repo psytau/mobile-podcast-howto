@@ -19,6 +19,7 @@ Rails.application.configure do
   :port => first_inbox['smtp_ports'][0],
   :authentication => :plain
   }
+  config.action_mailer.default_url_options = { :host => 'mobile-podcast-howto.herokuapp.com' }
   # Code is not reloaded between requests.
   config.cache_classes = true
 

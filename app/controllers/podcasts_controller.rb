@@ -25,6 +25,7 @@ class PodcastsController < ApplicationController
   # POST /podcasts.json
   def create
     @podcast = Podcast.new(podcast_params)
+    @podcast.user_id = current_user.id
 
     respond_to do |format|
       if @podcast.save

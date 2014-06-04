@@ -4,6 +4,11 @@ FactoryGirl.define do
     password "password12345"
   end
 
+  factory :user2, class: User do
+    email "test_user_2@example.com"
+    password "password12345"
+  end
+
   factory :valid_podcast, class: Podcast do
     slug "podcast1"
     course_name "English 101"

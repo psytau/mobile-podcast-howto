@@ -45,10 +45,26 @@ RSpec.describe PodcastsController, :type => :controller do
   # let(:valid_session) { {} }
 
   describe "GET index" do
-    it "assigns all podcasts as @podcasts" do
-      podcast = Podcast.create! valid_attributes
+    it "assigns all podcasts as @podcasts for the current user" do
+      podcast = Podcast.new valid_attributes
+      podcast.user_id = @test_user.id
+      podcast.save!
       get :index, {}
       expect(assigns(:podcasts)).to eq([podcast])
+    end
+    it "should only show your own podcasts" do
+      id1 = @test_user.id
+      podcast_attributes = valid_attributes.clone
+      podcast_attributes['user_id'] = id1
+      podcast = Podcast.create! podcast_attributes
+      user2 = User.create! :email => 'test_podcast_show_your_own@example.com', :password => '12345678'
+      test_user2 = FactoryGirl.create(:user2)
+      test_user2.confirm! # or set a confirmed_at inside the factory. Only necessary if you are using the "confirmable" module
+      podcast_attributes2 = valid_attributes.clone
+      podcast_attributes2['user_id'] = user2.id
+      Podcast.create! podcast_attributes2
+      get :index, {}
+      assigns(:podcasts).should eq([podcast])
     end
   end
 

@@ -1,10 +1,12 @@
 class PodcastsController < ApplicationController
+  before_filter :authenticate_user!, except: [:show]
   before_action :set_podcast, only: [:show, :edit, :update, :destroy]
 
   # GET /podcasts
   # GET /podcasts.json
   def index
-    @podcasts = Podcast.all
+    # @podcasts = Podcast.all
+    @podcasts = Podcast.where(:user_id => current_user.id)
   end
 
   # GET /podcasts/1

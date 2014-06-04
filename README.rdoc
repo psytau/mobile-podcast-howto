@@ -20,4 +20,10 @@
     * rails g migration AddUserRefToPodcasts user:references
     * belongs_to :user
     * has_many :podcasts
+  * clear out valid_session variables in spec because we use devise helpers
+* set up FactoryGirl
+  * gem factory_girl_rails
+  * update rspec_helper
+  * put factories in spec/factories.rb
+* put devise into rspec ... https://github.com/plataformatec/devise/wiki/How-To:-Controllers-tests-with-Rails-3-(and-rspec)
 <tt>rake doc:app</tt>.

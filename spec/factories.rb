@@ -4,4 +4,19 @@ FactoryGirl.define do
     password "password12345"
   end
 
+  factory :valid_podcast, class: Podcast do
+    slug "podcast1"
+    course_name "English 101"
+    podcast_name "Podcast 1"
+    feed "http://feeeeeeed.com/feed.rss"
+    description "A podcast for testing"
+  end
+
+  factory :invalid_feed_podcast, class: Podcast do
+    slug "podcast1"
+    course_name "English 101"
+    podcast_name "Podcast 1"
+    feed "feeeeeeed.com/feed.rss"
+    description "A podcast for testing"
+  end
 end

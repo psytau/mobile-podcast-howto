@@ -15,4 +15,8 @@
   * config.consider_all_requests_local       = true
   * config.action_controller.perform_caching = false
 * Our model: rails g scaffold Podcast slug course_name podcast_name feed description:text
+  * Do a one to many relationship...
+    * rails g migration AddUserRefToPodcasts user:references
+    * belongs_to :user
+    * has_many :podcasts
 <tt>rake doc:app</tt>.

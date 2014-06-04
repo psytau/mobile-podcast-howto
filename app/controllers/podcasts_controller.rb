@@ -1,15 +1,18 @@
 class PodcastsController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_podcast, only: [:show, :edit, :update, :destroy]
 
   # GET /podcasts
   # GET /podcasts.json
   def index
+    # TODO: show only podcasts you have created
     @podcasts = Podcast.all
   end
 
   # GET /podcasts/1
   # GET /podcasts/1.json
   def show
+    # todo: don't require authentication for show
   end
 
   # GET /podcasts/new
@@ -25,6 +28,7 @@ class PodcastsController < ApplicationController
   # POST /podcasts.json
   def create
     @podcast = Podcast.new(podcast_params)
+    @podcast.user_id = current_user.id
 
     respond_to do |format|
       if @podcast.save

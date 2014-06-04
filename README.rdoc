@@ -14,4 +14,5 @@
 * fix problems by turning debugging on in production.
   * config.consider_all_requests_local       = true
   * config.action_controller.perform_caching = false
+* Our model: rails g scaffold Podcast slug course_name podcast_name feed description:text
 <tt>rake doc:app</tt>.

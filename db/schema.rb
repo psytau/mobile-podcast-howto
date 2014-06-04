@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140530075546) do
+ActiveRecord::Schema.define(version: 20140604033054) do
+
+  create_table "podcasts", force: true do |t|
+    t.string   "slug"
+    t.string   "course_name"
+    t.string   "podcast_name"
+    t.string   "feed"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

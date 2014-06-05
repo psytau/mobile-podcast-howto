@@ -27,4 +27,5 @@
   * put factories in spec/factories.rb
 * put devise into rspec ... https://github.com/plataformatec/devise/wiki/How-To:-Controllers-tests-with-Rails-3-(and-rspec)
 * set up cabypara for rspec and devise https://github.com/plataformatec/devise/wiki/How-To:-Test-with-Capybara
-<tt>rake doc:app</tt>.
+
+{<img src="https://travis-ci.org/psytau/mobile-podcast-howto.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/psytau/mobile-podcast-howto]

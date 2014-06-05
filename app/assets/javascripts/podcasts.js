@@ -1,5 +1,5 @@
+$(function() {
 
-function hideOs () {
   var ua = navigator.userAgent.toLowerCase();
   var isAndroid = ua.indexOf("android") > -1;
 
@@ -15,10 +15,27 @@ function hideOs () {
 
   if (isAndroid) {
     $('.iOS').hide();
+    $('.desktop').hide();
   }
   else if (isIOS) {
     $('.android').hide();
+    $('.desktop').hide();
   }
-}
+  else {
+    $('.iOS').hide();
+  }
 
-$(function() {hideOs();});
+  $('#view-ios').on('click', function(){
+    console.log('ios');
+    $('.android').hide();
+    $('.iOS').show();
+  });
+  $('#view-android').on('click', function(){
+    console.log('android');
+    $('.iOS').hide();
+    $('.android').show();
+  });
+
+  console.log('lala');
+
+});

@@ -30,6 +30,7 @@ group :production do
   gem 'pg'
   # for mailtrap setup
   gem 'rest-client'
+  gem 'rails_12factor'
 end
 
 group :development, :test do

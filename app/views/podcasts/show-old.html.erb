@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @podcast.slug %>
+</p>
+
+<p>
+  <strong>Course name:</strong>
+  <%= @podcast.course_name %>
+</p>
+
+<p>
+  <strong>Podcast name:</strong>
+  <%= @podcast.podcast_name %>
+</p>
+
+<p>
+  <strong>Feed:</strong>
+  <%= @podcast.feed %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @podcast.description %>
+</p>
+
+<%= link_to 'Edit', edit_podcast_path(@podcast) %> |
+<%= link_to 'Back', podcasts_path %>

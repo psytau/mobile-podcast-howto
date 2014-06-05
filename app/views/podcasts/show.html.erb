@@ -1,29 +1,60 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Slug:</strong>
-  <%= @podcast.slug %>
-</p>
+<div class="description">
+  <h1>
+    Podcasts
+  </h1>
+  <p> 
+    <strong> Instructions for <%= @podcast.course_name %>: </strong> 
+    <%= @podcast.description %>
+  </p>
+  <div class="center">
+    <p>Podcast App</p>
+    <img class="android center" src="/img/beyondpod-demo.png" width="90%">
+    <img class="iOS center" src="/img/ios-demo.png" width="90%">
+  </div>
+</div>
+<div class="step step1">
+  <h2> Step 1 </h2>
+  <p>First download the App.</p>
+  <a class="iOS" href="https://itunes.apple.com/en/app/podcasts/id525463029?mt=8">
+    podcasts for iOS 
+    <img src="/img/Download_on_the_App_Store_Badge_HK_TW_135x40.png">
+</a>
+  <a class="android" href="https://play.google.com/store/apps/details?id=mobi.beyondpod">
+    beyondpod
+    <img class="android"
+       alt="Get it on Google Play"
+       src="https://developer.android.com/images/brand/zh-tw_generic_rgb_wo_45.png" />
+  </a>
+</div>
+<div class="step step2">
+  <h2> Step 2 </h2>
+  <div class='android'>
+    <p> Add the feed. Inside your App, copy and paste the feed's link. <strong>Note: do not paste it into your browser, you must paste it into the App that you just downloaded!</strong></p>
+    <div class="sub-step">
+      <p>1. Click <strong>Add Feed</strong></p>
+      <img src="/img/beyondpod-instructions-arrow-1.png" width="90%">
+    </div>
+    <div class="sub-step">
+      <p>2. Click <strong>Search</strong></p>
+      <img src="/img/beyondpod-instructions-arrow-2.png" width="90%">
+    </div>
+    <div class="sub-step">
+      <p>3. Paste in the feed's address. (Be sure to include http://!)</p>
+      <pre class="link-code center"><span> <%= @podcast.feed %> </span></pre>
+      <img src="/img/beyondpod-instructions-arrow-3.png" width="90%">
+    </div>
+  </div>
+  <div class="iOS">
+    <p> <strong> After you download the App, </strong> click this link to subscribe to the podcast" </p>
+    <pre class="link-code center"><span><a href="<%= @podcast.feed %>"> <%= @podcast.feed %> </a></span></pre>
+  </div>
+</div>
 
-<p>
-  <strong>Course name:</strong>
-  <%= @podcast.course_name %>
-</p>
-
-<p>
-  <strong>Podcast name:</strong>
-  <%= @podcast.podcast_name %>
-</p>
-
-<p>
-  <strong>Feed:</strong>
-  <%= @podcast.feed %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @podcast.description %>
-</p>
-
-<%= link_to 'Edit', edit_podcast_path(@podcast) %> |
-<%= link_to 'Back', podcasts_path %>
+<div class="step step3 iOS">
+  <h2>Step 3</h2>
+  <p> Add old episodes 加入舊的單集 </p>
+    <div class="sub-step">
+      <img src="/img/ios-add-episodes-arrow-1.png" width="90%">
+    </div>
+</div>

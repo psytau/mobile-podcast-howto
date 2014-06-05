@@ -1,0 +1,37 @@
+.link-code span{
+  border-style: dashed;
+  border-width: thin thin thin thin;
+  padding: 5px;
+}
+
+.description {
+  background-color: #2BBF9B;
+}
+
+.description h1 {
+  background-color: #24A182;
+}
+
+.step {
+  padding: 5px
+}
+
+.step1 {
+  background-color: #FD7400;
+}
+.step2 {
+  background-color: #FFE11A;
+}
+.step3 {
+  background-color: #BEDB39;
+}
+
+.step1 h2 {
+  background-color: #D16000;
+}
+.step2 h2 {
+  background-color: #E0C617;
+}
+.step3 h2 {
+  background-color: #A8C232;
+}

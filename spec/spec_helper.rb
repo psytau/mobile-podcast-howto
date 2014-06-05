@@ -17,7 +17,10 @@
 #
 require 'factory_girl'
 require 'devise'
+require 'capybara/rspec'
 
+include Warden::Test::Helpers
+Warden.test_mode!
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods

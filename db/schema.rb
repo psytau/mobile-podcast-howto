@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140604035619) do
+ActiveRecord::Schema.define(version: 20140604064806) do
 
   create_table "podcasts", force: true do |t|
     t.string   "slug"

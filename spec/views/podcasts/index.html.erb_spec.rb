@@ -3,29 +3,17 @@ require 'rails_helper'
 RSpec.describe "podcasts/index", :type => :view do
   before(:each) do
     assign(:podcasts, [
-      Podcast.create!(
-        :slug => "Slug",
-        :course_name => "Course Name",
-        :podcast_name => "Podcast Name",
-        :feed => "Feed",
-        :description => "MyText"
-      ),
-      Podcast.create!(
-        :slug => "Slug",
-        :course_name => "Course Name",
-        :podcast_name => "Podcast Name",
-        :feed => "Feed",
-        :description => "MyText"
-      )
+      FactoryGirl.create(:valid_podcast),
+      FactoryGirl.create(:valid_podcast)
     ])
   end
 
   it "renders a list of podcasts" do
     render
-    assert_select "tr>td", :text => "Slug".to_s, :count => 2
-    assert_select "tr>td", :text => "Course Name".to_s, :count => 2
-    assert_select "tr>td", :text => "Podcast Name".to_s, :count => 2
-    assert_select "tr>td", :text => "Feed".to_s, :count => 2
-    assert_select "tr>td", :text => "MyText".to_s, :count => 2
+    sample_model = FactoryGirl.build(:valid_podcast)
+    assert_select "tr>td", :text => sample_model.slug.to_s, :count => 2
+    assert_select "tr>td", :text => sample_model.course_name.to_s, :count => 2
+    assert_select "tr>td", :text => sample_model.podcast_name.to_s, :count => 2
+    assert_select "tr>td", :text => sample_model.feed.to_s, :count => 2
   end
 end

@@ -2,13 +2,14 @@ require 'rails_helper'
 
 RSpec.describe "podcasts/edit", :type => :view do
   before(:each) do
-    @podcast = assign(:podcast, Podcast.create!(
-      :slug => "MyString",
-      :course_name => "MyString",
-      :podcast_name => "MyString",
-      :feed => "MyString",
-      :description => "MyText"
-    ))
+    @podcast = assign(:podcast, FactoryGirl.create(:valid_podcast))
+    # @podcast = assign(:podcast, Podcast.create!(
+    #   :slug => "MyString",
+    #   :course_name => "MyString",
+    #   :podcast_name => "MyString",
+    #   :feed => "MyString",
+    #   :description => "MyText"
+    # ))
   end
 
   it "renders the edit podcast form" do

@@ -1,4 +1,5 @@
 class HostedFeedsController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_hosted_feed, only: [:show, :edit, :update, :destroy]
 
   # GET /hosted_feeds
@@ -25,6 +26,7 @@ class HostedFeedsController < ApplicationController
   # POST /hosted_feeds.json
   def create
     @hosted_feed = HostedFeed.new(hosted_feed_params)
+    @hosted_feed.user = current_user
 
     respond_to do |format|
       if @hosted_feed.save

@@ -27,6 +27,7 @@
     <%= f.label 'Feed Url' %><br>
     <%= f.text_field :feed, :class => 'topcoat-text-input'  %>
     <%= link_to "(or create your own feed)", new_hosted_feed_path %>
+    <%= collection_select(:hosted_feed, :id, HostedFeed.all, :id, :title)  %>
   </div>
   <div class="field">
     <%= f.label :description %><br>

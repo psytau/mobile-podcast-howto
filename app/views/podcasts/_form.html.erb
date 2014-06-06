@@ -24,8 +24,9 @@
     <%= f.text_field :podcast_name, :class => 'topcoat-text-input'  %>
   </div>
   <div class="field">
-    <%= f.label :feed %><br>
+    <%= f.label 'Feed Url' %><br>
     <%= f.text_field :feed, :class => 'topcoat-text-input'  %>
+    <%= link_to "(or create your own feed)", new_hosted_feed_path %>
   </div>
   <div class="field">
     <%= f.label :description %><br>

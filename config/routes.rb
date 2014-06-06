@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'p/:slug' => 'slug#show'
+
   resources :podcasts
 
   get '/' => 'splash#welcome'

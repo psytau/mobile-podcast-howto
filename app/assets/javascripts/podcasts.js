@@ -44,6 +44,9 @@ $(function() {
 
   $(document).on('page:restore', function() {
     console.log('page restore');
+  });
+  $(document).on('page:change', function() {
+    console.log('page change');
     hideOnLoad();
     setUpHideButtons();
   });

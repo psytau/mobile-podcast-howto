@@ -13,29 +13,40 @@ $(function() {
   }
   var isIOS = testIOS();
 
-  if (isAndroid) {
-    $('.iOS').hide();
-    $('.desktop').hide();
-  }
-  else if (isIOS) {
-    $('.android').hide();
-    $('.desktop').hide();
-  }
-  else {
-    $('.iOS').hide();
-  }
+  var hideOnLoad = function() {
+    if (isAndroid) {
+      $('.iOS').hide();
+      $('.desktop').hide();
+    }
+    else if (isIOS) {
+      $('.android').hide();
+      $('.desktop').hide();
+    }
+    else {
+      $('.iOS').hide();
+    }
+  };
 
-  $('#view-ios').on('click', function(){
-    console.log('ios');
-    $('.android').hide();
-    $('.iOS').show();
-  });
-  $('#view-android').on('click', function(){
-    console.log('android');
-    $('.iOS').hide();
-    $('.android').show();
+  var setUpHideButtons = function () {
+    $('#view-ios').on('click', function(){
+      console.log('ios');
+      $('.android').hide();
+      $('.iOS').show();
+    });
+    $('#view-android').on('click', function(){
+      console.log('android');
+      $('.iOS').hide();
+      $('.android').show();
+    });
+  };
+  hideOnLoad();
+  setUpHideButtons();
+
+  $(document).on('page:restore', function() {
+    console.log('page restore');
+    hideOnLoad();
+    setUpHideButtons();
   });
 
-  console.log('lala');
 
 });

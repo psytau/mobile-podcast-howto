@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :hosted_feeds
+
   get 'p/:slug' => 'slug#show'
 
   resources :podcasts

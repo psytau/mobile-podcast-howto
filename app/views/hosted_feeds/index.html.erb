@@ -1,0 +1,29 @@
+<h1>Listing hosted_feeds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Slug</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hosted_feeds.each do |hosted_feed| %>
+      <tr>
+        <td><%= hosted_feed.title %></td>
+        <td><%= hosted_feed.slug %></td>
+        <td><%= hosted_feed.description %></td>
+        <td><%= link_to 'Show', hosted_feed %></td>
+        <td><%= link_to 'Edit', edit_hosted_feed_path(hosted_feed) %></td>
+        <td><%= link_to 'Destroy', hosted_feed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hosted feed', new_hosted_feed_path %>

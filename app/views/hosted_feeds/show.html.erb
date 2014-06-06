@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @hosted_feed.title %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @hosted_feed.slug %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @hosted_feed.description %>
+</p>
+
+<%= link_to 'Edit', edit_hosted_feed_path(@hosted_feed) %> |
+<%= link_to 'Back', hosted_feeds_path %>

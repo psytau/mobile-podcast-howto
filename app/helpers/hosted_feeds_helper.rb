@@ -1,0 +1,2 @@
+module HostedFeedsHelper
+end

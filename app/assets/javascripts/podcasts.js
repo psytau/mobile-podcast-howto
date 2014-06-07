@@ -1,5 +1,17 @@
 $(function() {
 
+  // setup for create new feed
+  var setUpNewFeedOptListener = function () {
+    $('#podcast_hosted_feed_id').on('change', function (e) {
+      console.log(this);
+      console.log($(this).val());
+      if($(this).val() === 'new'){
+        console.log('redi');
+        window.location.href = '/hosted_feeds/new';
+      }
+    });
+  };
+
   var ua = navigator.userAgent.toLowerCase();
   var isAndroid = ua.indexOf("android") > -1;
 
@@ -42,13 +54,13 @@ $(function() {
   hideOnLoad();
   setUpHideButtons();
 
-  $(document).on('page:restore', function() {
-    console.log('page restore');
-  });
+  setUpNewFeedOptListener();
+
   $(document).on('page:change', function() {
-    console.log('page change');
     hideOnLoad();
     setUpHideButtons();
+     
+    setUpNewFeedOptListener();
   });
 
 

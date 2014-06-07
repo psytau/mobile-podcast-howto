@@ -1,3 +1,5 @@
+require 'ostruct'
+
 class PodcastsController < ApplicationController
   before_filter :authenticate_user!, except: [:show]
   before_action :set_podcast, only: [:show, :edit, :update, :destroy]
@@ -17,10 +19,20 @@ class PodcastsController < ApplicationController
   # GET /podcasts/new
   def new
     @podcast = Podcast.new
+    @hosted_feeds = HostedFeed.where(:user_id => current_user.id)
+    new_feed_opt = OpenStruct.new
+    new_feed_opt.id = 'new'
+    new_feed_opt.title = 'Create New'
+    @hosted_feeds.push(new_feed_opt)
   end
 
   # GET /podcasts/1/edit
   def edit
+    @hosted_feeds = HostedFeed.where(:user_id => current_user.id)
+    new_feed_opt = OpenStruct.new
+    new_feed_opt.id = 'New'
+    new_feed_opt.title = 'Create New'
+    @hosted_feeds.push(new_feed_opt)
   end
 
   # POST /podcasts

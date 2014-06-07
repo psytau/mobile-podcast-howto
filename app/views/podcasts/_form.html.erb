@@ -25,9 +25,13 @@
   </div>
   <div class="field">
     <%= f.label 'Feed Url' %><br>
-    <%= f.text_field :feed, :class => 'topcoat-text-input'  %>
+    <span id="feed_url_">
+      <%= f.text_field :feed, :class => 'topcoat-text-input'  %>
+    <span>
+  </div>
+  <div class="field">
     <%= link_to "(or create your own feed)", new_hosted_feed_path %>
-    <%= collection_select(:podcast, :hosted_feed_id, HostedFeed.all, :id, :title)  %>
+    <%= collection_select(:podcast, :hosted_feed_id,  @hosted_feeds, :id, :title, {prompt: 'Your Feeds'})  %>
   </div>
   <div class="field">
     <%= f.label :description %><br>

@@ -20,19 +20,13 @@ class PodcastsController < ApplicationController
   def new
     @podcast = Podcast.new
     @hosted_feeds = HostedFeed.where(:user_id => current_user.id)
-    new_feed_opt = OpenStruct.new
-    new_feed_opt.id = 'new'
-    new_feed_opt.title = 'Create New'
-    @hosted_feeds.push(new_feed_opt)
+    @hosted_feeds.push(OpenStruct.new(title: 'Create New', id: 'new'))
   end
 
   # GET /podcasts/1/edit
   def edit
     @hosted_feeds = HostedFeed.where(:user_id => current_user.id)
-    new_feed_opt = OpenStruct.new
-    new_feed_opt.id = 'New'
-    new_feed_opt.title = 'Create New'
-    @hosted_feeds.push(new_feed_opt)
+    @hosted_feeds.push(OpenStruct.new(title: 'Create New', id: 'new'))
   end
 
   # POST /podcasts

@@ -71,6 +71,6 @@ class HostedFeedsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hosted_feed_params
-      params.require(:hosted_feed).permit(:title, :slug, :description)
+      params.require(:hosted_feed).permit(:title, :slug, :description, :rss_feed_file)
     end
 end

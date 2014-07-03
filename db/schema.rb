@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140606094820) do
+ActiveRecord::Schema.define(version: 20140703151855) do
+
+  create_table "feed_items", force: true do |t|
+    t.string   "title"
+    t.text     "link"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "hosted_feed_id"
+  end
+
+  add_index "feed_items", ["hosted_feed_id"], name: "index_feed_items_on_hosted_feed_id"
 
   create_table "feeds", force: true do |t|
     t.string   "title"
@@ -28,6 +39,7 @@ ActiveRecord::Schema.define(version: 20140606094820) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "rss_feed_file"
   end
 
   add_index "hosted_feeds", ["user_id"], name: "index_hosted_feeds_on_user_id"

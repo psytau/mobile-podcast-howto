@@ -1,4 +1,17 @@
-== README
+== Mobile Podcast Howto
+
+=== Setup
+
+Do the following to get set up on your local computer
+
+  git clone
+  bundle install
+  rake db:setup
+  rails s
+
+=== Development
+
+As this project is being done primarily for learning Rails, this section records the steps I took in development.
 
 * rails new <name> -T
 * rvm --create use 2.0.0@mobile-podcast-howto
@@ -12,7 +25,7 @@
   * for example with mailtrap: https://devcenter.heroku.com/articles/mailtrap
   * add host for mailer eg: config.action_mailer.default_url_options = { :host => 'localhost' } in test, dev and production
   * set up mailcather for dev, and deal with mail setup on production
-* fix problems by turning debugging on in production.
+* fix problems by turning debugging on in production/staging, on heroku. Its probably better just to go through the logs, but it your just playing with new addon, it should be fine.
   * config.consider_all_requests_local       = true
   * config.action_controller.perform_caching = false
 * Our model: rails g scaffold Podcast slug course_name podcast_name feed description:text

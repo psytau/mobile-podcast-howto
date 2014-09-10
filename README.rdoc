@@ -8,6 +8,8 @@ Do the following to get set up on your local computer
   bundle install
   rake db:setup
   rails s
+  
+It can be set up on heroku with a similar procedure.
 
 === Development
 
